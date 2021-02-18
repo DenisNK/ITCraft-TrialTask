@@ -9,6 +9,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ITCraft_TrialTask.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace ITCraft_TrialTask
 {
@@ -26,6 +28,9 @@ namespace ITCraft_TrialTask
         {
 
             services.AddControllers();
+
+            services.AddDbContext<ItCraftDbContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("DevConnection")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

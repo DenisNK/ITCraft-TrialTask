@@ -1,19 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using ITCraft_TrialTask.Configurations;
 using Microsoft.EntityFrameworkCore;
 
 namespace ITCraft_TrialTask.Models
 {
-    public class ITCraftDbContext : DbContext
+    public class ItCraftDbContext : DbContext
     {                                              
 
-        public ITCraftDbContext(DbContextOptions<ITCraftDbContext> options):base(options)
+        public ItCraftDbContext(DbContextOptions<ItCraftDbContext> options):base(options)
         {
             
         }
 
         public DbSet<User> Users{ get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfiguration(new UserConfigurations());
+         
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }
