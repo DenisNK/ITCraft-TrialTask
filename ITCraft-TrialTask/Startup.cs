@@ -1,3 +1,4 @@
+using ITCraft_TrialTask.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -21,14 +22,16 @@ namespace ITCraft_TrialTask
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
-            services.AddControllers();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "PaymentAPI", Version = "v1" });
             });
-            services.AddDbContext<ItCraftDbContext>(options =>
+            services.AddDbContext<ItCraftDbContext>(options => 
                 options.UseSqlServer(Configuration.GetConnectionString("DevConnection")));
+
+            services.AddRepositories();
+         
+            services.AddControllers();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
