@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using ITCraft_TrialTask.IRepository;
+﻿using ITCraft_TrialTask.IRepository;
 using Microsoft.EntityFrameworkCore;
 
 namespace ITCraft_TrialTask.Repository

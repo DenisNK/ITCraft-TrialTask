@@ -1,5 +1,4 @@
 ﻿using ITCraft_TrialTask.Models;
-using System;
 using System.Linq;
 
 namespace ITCraft_TrialTask.Initializator
