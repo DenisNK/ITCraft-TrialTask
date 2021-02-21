@@ -1,3 +1,23 @@
-<p>user-details works!</p>
+<h2>User List</h2>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <td>Name</td>
+    <td>Status</td>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let p of listUser">
+      <td>{{p.name}}</td>
+      <td>{{p.active}}<td>
+      <td>{{p.id}}<td>
+       <input type="checkbox" [(ngModel)]="p.active" (ngModelChange)="editProduct(p)" class="form-control" />
+  </tr>
+  </tbody>
+</table>
 
-<app-user-detail-form></app-user-detail-form>
+<div class="total">
+  <button class="btn btn-sm btn-danger" (click)="GetCount()">Total</button>
+<p>Count={{countActive}}</p>
+<p>Total count={{ total }}</p>
+</div>
