@@ -317,24 +317,63 @@ __pycache__/
 *.btm.cs
 *.odx.cs
 *.xsd.cs
+# See http://help.github.com/ignore-files/ for more about ignoring files.
 
 # OpenCover UI analysis results
 OpenCover/
+# compiled output
+/dist
+/tmp
+/out-tsc
+# Only exists if Bazel was run
+/bazel-out
 
 # Azure Stream Analytics local run output
 ASALocalRun/
+# dependencies
+/node_modules
 
 # MSBuild Binary and Structured Log
 *.binlog
+# profiling files
+chrome-profiler-events*.json
+speed-measure-plugin*.json
 
 # NVidia Nsight GPU debugger configuration file
 *.nvuser
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
 
 # MFractors (Xamarin productivity tool) working folder
 .mfractor/
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
 
 # Local History for Visual Studio
 .localhistory/
+# misc
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+npm-debug.log
+yarn-error.log
+testem.log
+/typings
 
 # BeatPulse healthcheck temp database
 healthchecksdb
+# System Files
+.DS_Store
+Thumbs.db
